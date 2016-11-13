@@ -78,8 +78,8 @@ class Board
   def left_row
     @left_row ||= Row.new(
       top_left_space,
-      top_left_space,
-      top_left_space
+      middle_left_space,
+      bottom_left_space
     )
   end
 

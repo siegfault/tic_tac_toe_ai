@@ -2,11 +2,12 @@ require_relative './board.rb'
 require_relative './computer_player.rb'
 
 class Game
-  def initialize(board:, player_cross:, player_naught:)
+  def initialize(board:, player_cross:, player_naught:, output_device:)
     @board = board
     @player_cross = player_cross
     @player_naught = player_naught
     @player_order = [@player_naught, @player_cross]
+    @output_device = output_device
   end
 
   def play
@@ -15,11 +16,10 @@ class Game
       current_player = player_order.first
       location = current_player.move(board.available_moves)
       board.space_for(location).occupy(current_player.mark)
+      output_device.print
     end
-
-    puts current_player.mark
   end
 
   private
-  attr_reader :board, :player_cross, :player_naught, :player_order
+  attr_reader :board, :player_cross, :player_naught, :player_order, :output_device
 end
