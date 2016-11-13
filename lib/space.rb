@@ -18,15 +18,15 @@ class Space
     mark == :cross
   end
 
+  def occupied?
+    !@mark.nil?
+  end
+
   private
   attr_reader :location
   attr_writer :mark
 
   def acceptable_marks
     %i[naught cross]
-  end
-
-  def occupied?
-    !@mark.nil?
   end
 end
