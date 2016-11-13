@@ -1,8 +1,8 @@
 require_relative './game'
 require_relative './console_input'
 require_relative './console_output'
-require_relative './computer_player'
-require_relative './human_player'
+require_relative './players/randomized'
+require_relative './players/human'
 
 board = Board.new
 output = ConsoleOutput.new(board: board)
