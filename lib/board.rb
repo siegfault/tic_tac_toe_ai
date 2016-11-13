@@ -1,5 +1,5 @@
-require_relative './row.rb'
-require_relative './space.rb'
+require_relative './row'
+require_relative './space'
 
 class Board
   def initialize(rows: nil, spaces: nil)

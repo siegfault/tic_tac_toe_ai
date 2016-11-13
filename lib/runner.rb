@@ -1,8 +1,8 @@
-require_relative './game.rb'
-require_relative './console_input.rb'
-require_relative './console_output.rb'
-require_relative './computer_player.rb'
-require_relative './human_player.rb'
+require_relative './game'
+require_relative './console_input'
+require_relative './console_output'
+require_relative './computer_player'
+require_relative './human_player'
 
 board = Board.new
 output = ConsoleOutput.new(board: board)

@@ -1,5 +1,5 @@
-require_relative './board.rb'
-require_relative './turn.rb'
+require_relative './board'
+require_relative './turn'
 
 class Game
   def initialize(board:, player_cross:, player_naught:, output_device:)

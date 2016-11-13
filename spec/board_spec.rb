@@ -1,4 +1,4 @@
-require_relative '../lib/board.rb'
+require_relative '../lib/board'
 
 RSpec.describe Board do
   describe '#matching_on_any_row?' do

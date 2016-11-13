@@ -1,4 +1,4 @@
-require_relative '../lib/turn.rb'
+require_relative '../lib/turn'
 
 RSpec.describe Turn do
   let(:location) { :middle_middle }

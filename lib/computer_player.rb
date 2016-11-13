@@ -1,5 +1,5 @@
-require_relative './computer_move.rb'
-require_relative './player.rb'
+require_relative './computer_move'
+require_relative './player'
 
 class ComputerPlayer < Player
   def move(board:)

@@ -1,4 +1,4 @@
-require_relative '../lib/game.rb'
+require_relative '../lib/game'
 
 RSpec.describe Game do
   let(:board) { spy }

@@ -1,4 +1,4 @@
-require_relative './move.rb'
+require_relative './move'
 
 class ComputerMove < Move
   def select
