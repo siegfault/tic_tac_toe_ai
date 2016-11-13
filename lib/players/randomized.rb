@@ -1,8 +1,15 @@
 require_relative '../computer_move'
-require_relative '../player'
 
 module Players
-  class Randomized < Player
+  class Randomized
+    attr_reader :mark, :input_device, :output_device
+
+    def initialize(mark:, input_device:, output_device:)
+      @mark = mark
+      @input_device = input_device
+      @output_device = output_device
+    end
+
     def move(board:)
       ComputerMove.new(
         board: board,
