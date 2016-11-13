@@ -1,7 +1,12 @@
+require_relative './computer_move.rb'
 require_relative './player.rb'
 
 class ComputerPlayer < Player
-  def move(available_moves)
-    available_moves.sample
+  def move(board:)
+    ComputerMove.new(
+      board: board,
+      input_device: input_device,
+      output_device: output_device
+    ).select
   end
 end

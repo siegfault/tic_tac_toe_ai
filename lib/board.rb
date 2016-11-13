@@ -20,7 +20,7 @@ class Board
   end
 
   def available_moves
-    spaces.reject(&:occupied?).map(&:location)
+    spaces.reject(&:occupied?).map(&:location).map(&:to_s)
   end
 
   def space_for(location)

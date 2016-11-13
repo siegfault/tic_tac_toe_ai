@@ -3,7 +3,7 @@ class ConsoleOutput
     @board = board
   end
 
-  def print
+  def print_board
     output_progress
 
     if board.matching_on_any_rows?
@@ -11,6 +11,10 @@ class ConsoleOutput
     elsif board.filled_out?
       output_tie
     end
+  end
+
+  def print_moves(available_moves)
+    puts available_moves.join(' ')
   end
 
   private

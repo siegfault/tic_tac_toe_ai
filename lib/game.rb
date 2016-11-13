@@ -13,9 +13,9 @@ class Game
     until board.filled_out? || board.matching_on_any_rows?
       @player_order.reverse!
       current_player = player_order.first
-      location = current_player.move(board.available_moves)
+      location = current_player.move(board: board)
       board.space_for(location).occupy(current_player.mark)
-      output_device.print
+      output_device.print_board
     end
   end
 
