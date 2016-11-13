@@ -15,6 +15,10 @@ class Board
     spaces.all?(&:occupied?)
   end
 
+  def winning_mark
+    rows.map(&:winning_mark).compact.first
+  end
+
   private
   attr_reader :rows, :spaces
 

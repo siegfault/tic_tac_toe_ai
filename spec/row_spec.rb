@@ -31,5 +31,9 @@ RSpec.describe Row do
     it do
       expect(row).to be_complete
     end
+
+    it 'knows which mark won' do
+      expect(row.winning_mark).to be(:cross)
+    end
   end
 end

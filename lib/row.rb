@@ -6,7 +6,15 @@ class Row
   end
 
   def complete?
-    elements.all?(&:naught?) || elements.all?(&:cross?)
+    all_cross? || all_naught?
+  end
+
+  def winning_mark
+    if all_cross?
+      :cross
+    elsif all_naught?
+      :naught
+    end
   end
 
   private
@@ -14,5 +22,13 @@ class Row
 
   def elements
     [element1, element2, element3]
+  end
+
+  def all_cross?
+    elements.all?(&:cross?)
+  end
+
+  def all_naught?
+    elements.all?(&:naught?)
   end
 end

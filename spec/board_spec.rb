@@ -62,4 +62,14 @@ RSpec.describe Board do
       end
     end
   end
+
+  describe '#winning_mark' do
+    let(:board) { Board.new(rows: [row1, row2]) }
+    let(:row1) { double(winning_mark: nil) }
+    let(:row2) { double(winning_mark: :naught) }
+
+    it 'finds the winning mark' do
+      expect(board.winning_mark).to be(:naught)
+    end
+  end
 end
