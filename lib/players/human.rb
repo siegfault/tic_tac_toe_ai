@@ -1,4 +1,4 @@
-require_relative '../human_move'
+require_relative '../moves/human'
 
 module Players
   class Human
@@ -11,7 +11,7 @@ module Players
     end
 
     def move(board:)
-      HumanMove.new(
+      Moves::Human.new(
         board: board,
         input_device: input_device,
         output_device: output_device

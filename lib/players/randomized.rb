@@ -1,4 +1,4 @@
-require_relative '../computer_move'
+require_relative '../moves/randomized'
 
 module Players
   class Randomized
@@ -11,7 +11,7 @@ module Players
     end
 
     def move(board:)
-      ComputerMove.new(
+      Moves::Randomized.new(
         board: board,
         input_device: input_device,
         output_device: output_device
