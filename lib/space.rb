@@ -1,5 +1,5 @@
 class Space
-  attr_reader :mark
+  attr_reader :location, :mark
 
   def initialize(location:, mark: nil)
     @location = location
@@ -23,7 +23,6 @@ class Space
   end
 
   private
-  attr_reader :location
   attr_writer :mark
 
   def acceptable_marks

@@ -1,7 +1,7 @@
 require_relative '../lib/computer_player'
 
 RSpec.describe ComputerPlayer do
-  let(:player) { ComputerPlayer.new }
+  let(:player) { ComputerPlayer.new(mark: :cross) }
 
   context 'with many elements' do
     let(:available_moves) { [*(1..9)] }
