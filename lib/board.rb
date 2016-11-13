@@ -1,5 +1,5 @@
-require 'row'
-require 'space'
+require_relative './row.rb'
+require_relative './space.rb'
 
 class Board
   def initialize(rows: nil, spaces: nil)
@@ -17,6 +17,14 @@ class Board
 
   def winning_mark
     rows.map(&:winning_mark).compact.first
+  end
+
+  def available_moves
+    spaces.reject(&:occupied?).map(&:location)
+  end
+
+  def space_for(location)
+    spaces.detect { | space| space.location == location }
   end
 
   private
