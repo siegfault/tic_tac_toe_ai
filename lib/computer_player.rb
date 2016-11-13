@@ -1,10 +1,6 @@
-class ComputerPlayer
-  attr_reader :mark
+require_relative './player.rb'
 
-  def initialize(mark:)
-    @mark = mark
-  end
-
+class ComputerPlayer < Player
   def move(available_moves)
     available_moves.sample
   end
