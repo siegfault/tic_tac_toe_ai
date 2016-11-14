@@ -24,6 +24,12 @@ RSpec.describe Space do
       it 'should not be able to be occupied' do
         expect(space.occupy(:naught)).to be false
       end
+
+      describe 'its formatted_mark' do
+        it do
+          expect(space.formatted_mark).to eq('o')
+        end
+      end
     end
 
     context 'by cross' do
@@ -44,6 +50,12 @@ RSpec.describe Space do
       it 'should not be able to be occupied' do
         expect(space.occupy(:naught)).to be false
       end
+
+      describe 'its formatted_mark' do
+        it do
+          expect(space.formatted_mark).to eq('x')
+        end
+      end
     end
   end
 
@@ -62,6 +74,12 @@ RSpec.describe Space do
 
     it 'should not be occupyable by an invalid mark' do
       expect(space.occupy(:foo)).to be false
+    end
+
+    describe 'its formatted_mark' do
+      it do
+        expect(space.formatted_mark).to eq(' ')
+      end
     end
   end
 end

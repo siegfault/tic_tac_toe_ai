@@ -72,4 +72,26 @@ RSpec.describe Board do
       expect(board.winning_mark).to be(:naught)
     end
   end
+
+  describe '#available_moves' do
+    let(:board) { Board.new(spaces: [space1, space2, space3]) }
+    let(:space1) { double(occupied?: false, location: :top) }
+    let(:space2) { double(occupied?: true, location: :middle) }
+    let(:space3) { double(occupied?: false, location: :bottom) }
+
+    it 'should return the available moves' do
+      expect(board.available_moves).to match_array(%w[top bottom])
+    end
+  end
+
+  describe '#space_for' do
+    let(:board) { Board.new(spaces: [space1, space2, space3]) }
+    let(:space1) { double(location: :top) }
+    let(:space2) { double(location: :middle) }
+    let(:space3) { double(location: :bottom) }
+
+    it 'should fine the space' do
+      expect(board.space_for(:bottom)).to be(space3)
+    end
+  end
 end

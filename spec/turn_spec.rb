@@ -19,4 +19,27 @@ RSpec.describe Turn do
 
     turn.play
   end
+
+  context 'when the board is won' do
+    before { allow(board).to receive(:matching_on_any_rows?).and_return(true) }
+
+    it do
+      expect(io_device).to receive(:print_winner).with(player)
+
+      turn.play
+    end
+  end
+
+  context 'when the board is filled' do
+    before do
+      allow(board).to receive(:matching_on_any_rows?).and_return(false)
+      allow(board).to receive(:filled_out?).and_return(true)
+    end
+
+    it do
+      expect(io_device).to receive(:print_tie).with(no_args)
+
+      turn.play
+    end
+  end
 end
