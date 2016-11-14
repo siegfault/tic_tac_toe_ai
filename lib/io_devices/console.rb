@@ -4,12 +4,12 @@ module IoDevices
       gets.chomp
     end
 
-    def print_moves(available_moves)
-      puts available_moves.join(' ')
-    end
-
     def print_board(marks:)
       puts format_marks(marks: marks)
+    end
+
+    def print_moves(available_moves)
+      puts available_moves.join(' ')
     end
 
     def print_winner(player)
