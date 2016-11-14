@@ -2,12 +2,12 @@ require_relative './board'
 require_relative './turn'
 
 class Game
-  def initialize(board:, player_cross:, player_naught:, output_device:)
+  def initialize(board:, player_cross:, player_naught:, io_device:)
     @board = board
     @player_cross = player_cross
     @player_naught = player_naught
     @player_order = [@player_naught, @player_cross]
-    @output_device = output_device
+    @io_device = io_device
   end
 
   def play
@@ -18,7 +18,7 @@ class Game
   end
 
   private
-  attr_reader :board, :player_cross, :player_naught, :player_order, :output_device
+  attr_reader :board, :player_cross, :player_naught, :player_order, :io_device
 
   def completed?
     board.filled_out? || board.matching_on_any_rows?
@@ -32,7 +32,7 @@ class Game
     Turn.new(
       board: board,
       current_player: player_order.first,
-      output_device: output_device
+      io_device: io_device
     ).play
   end
 end

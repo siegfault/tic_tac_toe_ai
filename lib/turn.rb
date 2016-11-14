@@ -1,8 +1,8 @@
 class Turn
-  def initialize(board:, current_player:, output_device:)
+  def initialize(board:, current_player:, io_device:)
     @board = board
     @current_player = current_player
-    @output_device = output_device
+    @io_device = io_device
   end
 
   def play
@@ -11,7 +11,7 @@ class Turn
   end
 
   private
-  attr_reader :board, :current_player, :output_device
+  attr_reader :board, :current_player, :io_device
 
   def perform_move
     space.occupy(mark)
@@ -30,12 +30,12 @@ class Turn
   end
 
   def output
-    output_device.print_board(marks: board.spaces.map(&:formatted_mark))
+    io_device.print_board(marks: board.spaces.map(&:formatted_mark))
 
     if board.matching_on_any_rows?
-      output_device.print_winner(current_player)
+      io_device.print_winner(current_player)
     elsif board.filled_out?
-      output_device.print_tie
+      io_device.print_tie
     end
   end
 end

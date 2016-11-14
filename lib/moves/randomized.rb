@@ -1,9 +1,8 @@
 module Moves
   class Randomized
-    def initialize(board:, input_device:, output_device:)
+    def initialize(board:, io_device:)
       @board = board
-      @input_device = input_device
-      @output_device = output_device
+      @io_device = io_device
     end
 
     def select
@@ -11,7 +10,7 @@ module Moves
     end
 
     private
-    attr_reader :board, :input_device, :selection, :output_device
+    attr_reader :board, :io_device
 
     def available_moves
       @available_moves ||= board.available_moves
