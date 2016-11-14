@@ -1,3 +1,4 @@
+require_relative './../spec_helper'
 require_relative '../../lib/players/human'
 
 RSpec.describe Players::Human do

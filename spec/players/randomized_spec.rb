@@ -1,3 +1,4 @@
+require_relative './../spec_helper'
 require_relative '../../lib/players/randomized'
 
 RSpec.describe Players::Randomized do

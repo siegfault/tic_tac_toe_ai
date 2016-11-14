@@ -1,3 +1,4 @@
+require_relative './../spec_helper'
 require_relative '../../lib/io_devices/console'
 
 RSpec.describe IoDevices::Console do

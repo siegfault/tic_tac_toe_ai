@@ -1,3 +1,4 @@
+require_relative './../spec_helper'
 require_relative '../../lib/moves/randomized'
 
 RSpec.describe Moves::Randomized do
