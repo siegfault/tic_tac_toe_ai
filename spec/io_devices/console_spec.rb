@@ -2,11 +2,12 @@ require_relative './../spec_helper'
 require_relative '../../lib/io_devices/console'
 
 RSpec.describe IoDevices::Console do
-  xdescribe '#get' do
-    before { expect($stdin).to receive(:gets).and_return("foo\ ") }
+  describe '#get' do
+    subject { described_class.new }
+    before { allow(subject).to receive(:gets).and_return("foo\n") }
 
     it do
-      expect(IoDevices::Console.new.get).to eq('foo')
+      expect(subject.get).to eq('foo')
     end
   end
 
