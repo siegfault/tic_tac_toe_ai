@@ -1,12 +1,14 @@
 require_relative './game'
-require_relative './io_devices/console'
-require_relative './players/randomized'
-require_relative './players/human'
+Dir["./lib/players/*.rb"].each {|file| require file }
+Dir["./lib/io_devices/*.rb"].each {|file| require file }
 
-board = Board.new
-console = IoDevices::Console.new
-cross = Players::Randomized.new(mark: :cross, io_device: console)
-naught = Players::Human.new(mark: :naught, io_device: console)
+io_device = IoDevices::Console.new
+cross_player_class = Players::Randomized
+naught_player_class = Players::Randomized
 
-game = Game.new(board: board, player_cross: cross, player_naught: naught, io_device: console)
-game.play
+Game.new(
+  board: Board.new,
+  io_device: io_device,
+  player_cross: cross_player_class.new(mark: :cross, io_device: io_device),
+  player_naught: naught_player_class.new(mark: :naught, io_device: io_device)
+).play
