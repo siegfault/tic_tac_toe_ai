@@ -30,6 +30,12 @@ class Turn
   end
 
   def output
-    output_device.print_board
+    output_device.print_board(marks: board.spaces.map(&:formatted_mark))
+
+    if board.matching_on_any_rows?
+      output_device.print_winner(current_player)
+    elsif board.filled_out?
+      output_device.print_tie
+    end
   end
 end

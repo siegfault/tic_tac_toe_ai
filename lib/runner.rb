@@ -5,7 +5,7 @@ require_relative './players/randomized'
 require_relative './players/human'
 
 board = Board.new
-output = ConsoleOutput.new(board: board)
+output = ConsoleOutput.new
 input = ConsoleInput.new
 cross = Players::Randomized.new(mark: :cross, input_device: nil, output_device: nil)
 naught = Players::Human.new(mark: :naught, input_device: input, output_device: output)

@@ -2,6 +2,8 @@ require_relative './row'
 require_relative './space'
 
 class Board
+  attr_reader :spaces
+
   def initialize(rows: nil, spaces: nil)
     @spaces = spaces || create_spaces
     @rows   = rows   || create_rows
@@ -28,7 +30,7 @@ class Board
   end
 
   private
-  attr_reader :rows, :spaces
+  attr_reader :rows
 
   def create_rows
     [

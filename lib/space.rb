@@ -22,6 +22,17 @@ class Space
     !@mark.nil?
   end
 
+  def formatted_mark
+    if naught?
+      'o'
+    elsif cross?
+      'x'
+    else
+      ' '
+    end
+  end
+
+
   private
   attr_writer :mark
 
